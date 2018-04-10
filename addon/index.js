@@ -46,7 +46,7 @@ export default Mixin.create({
 
     const preserveScrollPosition = get(lastTransition, 'handler.controller.preserveScrollPosition')
 
-    if (!preserveScrollPosition) {
+    if (!preserveScrollPosition || hashElement) {
       if (scrollElement === 'window') {
         window.scrollTo(scrollPosition.x, scrollPosition.y)
       } else if (scrollElement.charAt(0) === '#') {
